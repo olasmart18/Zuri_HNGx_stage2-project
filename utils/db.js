@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const dbConnection = async () => {
-    const dbName = 'User';
+    const dbName = 'User_DB';
     const url = `${process.env.MONGO_URI}/${dbName}`
     const options = {
         useNewUrlParser: false,
