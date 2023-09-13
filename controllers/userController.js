@@ -2,18 +2,18 @@ import User from '../models/user.js';
 
 // create new user
 export const newUser = async (req, res) => {
-    const { username } = req.body;
+    const { name } = req.body;
     try {
         // find existinf user
-        const existUser = await User.findOne({ name: username });
+        const existUser = await User.findOne({ name: name });
         if (!existUser) {
             const newUser = new User({
-                name: username
+                name: name
             });
             await newUser.save(); // save new user
             return res.status(201).json({
                 success: true,
-                message: `successfully register as ${newUser.username}`,
+                message: `successfully register as ${newUser.name}`,
                 status_code: 201
             })
         } 
