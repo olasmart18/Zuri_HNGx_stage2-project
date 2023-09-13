@@ -26,7 +26,37 @@ export const newUser = async (req, res) => {
         })
     } catch (err) {
         return res.status(500).json({
-            message: 'server error'
+            success: false,
+            message: 'server error',
+            status_code: 500
+        })
+    }
+}
+
+//fetch or retrieve user 
+export const getSingleUser = async (req, res) => {
+    const user_id = req.params.user_id
+    try {
+        const userExist = await User.findOne({ _id: user_id })
+        if (userExist) {
+        return res.status(200).json({
+            success: true,
+            message: `user with ${user_id} ID found`,
+            data: userExist,
+            status_code: 200
+        })
+    } else {
+        return res.status(404).json({
+            sucess: false,
+            message: 'no user found',
+            status_code: 404
+        })
+    }
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: 'server error',
+            status_code: 500
         })
     }
 }
