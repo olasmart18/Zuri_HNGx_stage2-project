@@ -92,3 +92,30 @@ export const updateUser = async (req, res) => {
         })
     }
 }
+
+export const deleteUser = async (req, res) => {
+    const user_id = req.params.user_id
+    try {
+        const findUser = await User.findById(user_id)
+        if(!findUser) {
+         return res.status(404).json({
+            sucess: false,
+            message: 'no user found',
+            status_code: 404
+        })
+    }
+      await User.findByIdAndDelete(findUser._id)
+            return res.status(200).json({
+                success: true,
+                message: 'delete user successfully',
+                status_code: 200
+            })
+
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: 'server error',
+            status_code: 500
+        })
+    }
+}
