@@ -60,3 +60,35 @@ export const getSingleUser = async (req, res) => {
         })
     }
 }
+
+//update user 
+export const updateUser = async (req, res) => {
+    const user_id = req.params.user_id
+    try {
+        const findUser = await User.findById(user_id)
+        if(!findUser) {
+         return res.status(404).json({
+            sucess: false,
+            message: 'no user found',
+            status_code: 404
+        })
+    }
+     const updateUserData = await User.findByIdAndUpdate(findUser._id,
+            {$set: req.body},
+            {new: true});
+            await updateUserData.save();
+            return res.status(201).json({
+                success: true,
+                message: 'updated user successfully',
+                data: updateUserData,
+                status_code: 201
+            })
+
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: 'server error',
+            status_code: 500
+        })
+    }
+}
