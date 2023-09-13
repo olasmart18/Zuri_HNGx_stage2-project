@@ -2,15 +2,13 @@ import User from '../models/user.js';
 
 // create new user
 export const newUser = async (req, res) => {
-    const { username, email, password } = req.body;
+    const { username } = req.body;
     try {
         // find existinf user
-        const existUser = await User.findOne({ email: email });
+        const existUser = await User.findOne({ name: username });
         if (!existUser) {
             const newUser = new User({
-                username: username,
-                email: email,
-                password: password
+                name: username
             });
             await newUser.save(); // save new user
             return res.status(201).json({
