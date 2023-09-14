@@ -74,14 +74,14 @@ The UML diagram below represent the database model and it reationShip
 ### Fetch person's Data
 `method`: GET
 `endpoint`: `/api/user_id` :- this endpoint will fetch a person's data related to the `ID`.
-`postman test result`: ![My Image](/Documentation/fetch_Person.png)
+`postman test result`: ![My Image](/Documentation/fetch_person.png)
 
 ### Update person's Data
 `method`: PUT
 `endpoint`: `/api/user_id` :- this endpoint will update person's data associated with the `ID`.
-`postman test result`: ![My Image](/Documentation/update_Person.png)
+`postman test result`: ![My Image](/Documentation/update_person.png)
 
 ### Delete person's Data
 `method`: DELETE
 `endpoint`: `/api/user_id` :- this endpoint will delete person's Data with the `ID`.
-`postman test result`: ![My Image](/Documentation/delete_Person.png)
+`postman test result`: ![My Image](/Documentation/delete_person.png)
