@@ -62,4 +62,4 @@ your server should be running now on any port you have set in your .env
 ## person's database modelling
 
 The UML diagram below represent the database model and it reationShip 
-![My Image](uml\uml_image.png)
+![My Image](/uml/uml_image.png)
