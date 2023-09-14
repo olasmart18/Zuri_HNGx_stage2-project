@@ -22,7 +22,11 @@ const dbConnection = async () => {
 async function run () {
   try {
     const uri = process.env.MONGO_URI_ATLAS;
-    await mongoose.connect(uri);
+    const options = {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    };
+    await mongoose.connect(uri, options);
     console.log('You successfully connected to MongoDB!');
   } catch (err) {
     console.log(err);
