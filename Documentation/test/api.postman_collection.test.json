@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "b75f1987-eff1-406d-abd4-ab7008b259a0",
+		"name": "stage2_task_zuri",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Adewale mikel\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hngx-stage2-3bp4.onrender.com/api",
+					"protocol": "https",
+					"host": [
+						"hngx-stage2-3bp4",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retrieve user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hngx-stage2-3bp4.onrender.com/api/6502d48ed3c19fbf2f5a925d",
+					"protocol": "https",
+					"host": [
+						"hngx-stage2-3bp4",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"6502d48ed3c19fbf2f5a925d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Olamide Micheal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hngx-stage2-3bp4.onrender.com/api/6502d48ed3c19fbf2f5a925d",
+					"protocol": "https",
+					"host": [
+						"hngx-stage2-3bp4",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"6502d48ed3c19fbf2f5a925d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/65020bc082d9a824152bc4ee",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"65020bc082d9a824152bc4ee"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
